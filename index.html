@@ -8,12 +8,12 @@
     
     <!-- Faebook Open Graphs -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.amarillotechmeetup.com" />    
-    <meta property="og:title" content="Amarillo Tech Meetup" />
-    <meta property="og:description" content="Get together with other technical professionals, students and hobbyists in the Panhandle." />
-    <meta property="og:image" content="https://www.amarillotechmeetup.com/img/bg.jpg" />
+    <meta property="og:url" content="https://www.example.com" />    
+    <meta property="og:title" content="Coming Soon" />
+    <meta property="og:description" content="Say something informative here." />
+    <meta property="og:image" content="/img/bg.jpg" />
     
-    <title>Amarillo Tech Meetup</title>
+    <title>Coming Soon</title>
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,11 +43,11 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Amarillo Tech Meetup</h3>
+              <h3 class="masthead-brand">Coming Soon</h3>
               <nav>
                 <!--
                 <ul class="nav masthead-nav">
-                  <li><a href="https://www.meetup.com/Amarillo-Tech-Meetup/">Meetup</a></li>
+                  <li><a href="https://www.example.com">Link</a></li>
                 </ul>
                 -->
               </nav>
@@ -55,20 +55,30 @@
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">You Are Not Alone</h1>
+            <h1 class="cover-heading">Join Us</h1>
             
-            <p class="lead">We are bringing together tech professionals, students and hobbyists in the Texas Panhandle.</p>
-              <p>Please join our Meetup Group.</p>
-                <div class="button">
-                  <a href="https://www.meetup.com/Amarillo-Tech-Meetup/">
-                    <button type="submit" type="button" class="btn btn-warning">
-                      <i class="fa fa-meetup" aria-hidden="true"></i>
-                      Join Our Meetup
-                    </button>
-                  </a>
-                </div>
-            </div>
+            <p class="lead">No idea what we're doing yet, but it's going to be cool. Come join us!</p>
+            <div id="confirm" class="lead">
+              
+              <form id="join" action="/functions/hello.js" method="post">
 
+                <label id="prompt" for="email">Please enter your email address.</label>
+
+                <div id="input-panel" class="inner">
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required/>
+                </div>
+                
+                <div class="button">
+                  <button type="submit" type="button" class="btn btn-danger">
+                    <i class="fa fa-slack" aria-hidden="true"></i>
+                    Join Us
+                  </button>
+                </div>
+                
+              </form>
+             
+             </div>
+            
           </div>
 
           <div class="mastfoot">
@@ -108,7 +118,7 @@
 
       function showResponse(responseText, statusText, xhr, $form)  {
         if ( responseText.message.includes('Invitation sent') ) {
-          $('#slack').html("<p>Your invitation is on the way!</p>");
+          $('#confirm').html("<p>Your invitation is on the way!</p>");
         } else {
           console.log("error: " + responseText.message);
           $('#prompt').text("Something went wrong. Please try again. If you continue to have problems, please contact bill@billglover.com for help.");
