@@ -118,7 +118,7 @@
 
       function showResponse(responseText, statusText, xhr, $form)  {
         if ( responseText.message.includes('Invitation sent') ) {
-          $('#confirm').html("<p>Your invitation is on the way!</p>");
+          $('#confirm').html("<p>" + responseText.message + "</p>");
         } else {
           console.log("error: " + responseText.message);
           $('#prompt').text("Something went wrong. Please try again. If you continue to have problems, please contact bill@billglover.com for help.");
