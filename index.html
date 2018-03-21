@@ -118,6 +118,8 @@
 
       function showResponse(responseText, statusText, xhr, $form)  {
         if ( responseText.message.includes('Invitation sent') ) {
+          console.log("responseText: " + responseText);
+          console.log("responseText.message: " + responseText.message);
           $('#confirm').html("<p>" + responseText.message + "</p>");
         } else {
           console.log("error: " + responseText.message);
