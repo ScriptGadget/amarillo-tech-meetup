@@ -1,6 +1,6 @@
 exports.handler = function(event, context, callback) {
-    callback(null, {
+  callback(null, {
     statusCode: 200,
-    body: '[("message": "Invitation sent ' + event.queryStringParameters['email'] + '")]'
-    });
+    body: '{"message": "Invitation sent ' + event.queryStringParameters['email'] + '"}'
+  });
 }
